@@ -8,6 +8,7 @@ public class SingleTargetSkill extends Skill {
 
     @Override
     public void cast(CombatNode target) {
+        int damage = resolvedDamage();
         CombatNode actualTarget = findAliveLeaf(target);
         if (actualTarget != null) {
             actualTarget.takeDamage(damage);
